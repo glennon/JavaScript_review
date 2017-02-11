@@ -8,7 +8,6 @@ var costs = [0.25,0.27,0.25,0.25,0.25,0.25,
              0.25,0.25,0.27,0.25,0.26,0.29];
 var output;
 
-
 // output bubble experiment values
 function printAndGetHighScores(scores,costs) {
   var highestValue;
@@ -40,7 +39,6 @@ function getBestResults(scores,myHighScore) {
   var highestAddress = [];
   for (var y = 0; y < scores.length; y++) {
     if (scores[y] == myHighScore) {
-      // spec requires a # before the value, so added here to make output easier
       highestAddress.push(y);
     }
   }
