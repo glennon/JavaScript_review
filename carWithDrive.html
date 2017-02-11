@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Car Object with Methods</title>
+</head>
+<body>
+  <script>
+
+  var fiat = {
+    make: "Fiat",
+    model: "500",
+    year: 1957,
+    color: "Medium Blue",
+    passengers: 2,
+    convertible: false,
+    mileage: 88000,
+    started: false,
+    start: function() {
+      this.started = true;
+      alert("The car engine has now been started.");
+    },
+    stop: function() {
+      this.started = false;
+      alert("The car engine has now been stopped.");
+    },
+    drive: function() {
+      if (this.started) {
+        alert("Zoom zoom!");
+      } else {
+        alert("You need to start the engine first.");
+      }
+    }
+  };
+
+  fiat.drive();
+  fiat.start();
+  fiat.drive();
+  fiat.stop();
+
+
+  </script>
+</body>
+</html>
