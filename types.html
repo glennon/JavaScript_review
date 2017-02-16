@@ -5,9 +5,14 @@
   <title>types play</title>
   <script>
     if (99 == "99") {
-      console.log("A number equals a string! eep");
+      console.log("A number equals a string!"); // typical JavaScript type conversion
     } else {
       console.log("No way a number equals a string");
+    }
+    if ("1" == true) {
+      console.log("I think that \"1\" == true is true."); // double type conversion. "1" gets converted to 1 and true is converted to 1
+    } else {
+      console.log("It turns out that \"1\" == true is not true. Curious");
     }
   </script>
 </head>
