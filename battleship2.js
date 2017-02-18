@@ -22,8 +22,8 @@ var model = {
   shipsSunk: 0,
 
   ships: [{ locations: ["06","16","26"], hits:["","",""] },
-          { locations: ["24","34","44"], hits:["","",""] },
-          { locations: ["10","11","12"], hits:["","",""] }],
+  { locations: ["24","34","44"], hits:["","",""] },
+  { locations: ["10","11","12"], hits:["","",""] }],
 
 
   fire: function(guess) {
@@ -53,4 +53,24 @@ var model = {
     }
     return true;
   }
+};
+
+function parseGuess(guess) {
+  var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+  if (guess === null || guess.length !== 2) {
+    alert ("Oops, please enter a letter and number on the board.");
+  } else {
+    var firstChar = guess.charAt(0);
+    var row = alphabet.indexOf(firstChar);
+    var column = guess.charAt(1);
+
+    if (isNaN(row) || isNaN(column)) {
+      alert("Oops, that is not on the board.");
+    } else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
+      alert("Oops, that is off the board.");
+    } else {
+      return row + column;
+    }
+  }
+  return null;
 };
