@@ -89,6 +89,20 @@ var model = {
       };
     };
     return newShipLocations;
+  },
+
+  collision: function(locations) {
+    for (var i = 0; i < this.numShips; i++) {
+      var ship = this.ships[i];
+      for (var j = 0; j < locations.length; j++){
+        if (ship.locations.indexOf(locations[j]) >= 0) {
+          // collision detected with new ship with existing ships
+          return true;
+        }
+      }
+    }
+    // no collision detected
+    return false;
   }
 
 
