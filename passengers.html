@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Passengers</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+			<script>
+
+			var passengers = [  { name: "Jane Doloop", paid: true, ticket: "coach" },
+								{ name: "Dr. Evel", paid: true, ticket: "firstclass" },
+								{ name: "Sue Property", paid: false, ticket: "firstclass" },
+								{ name: "John Funcall", paid: true, ticket: "premium" } ];
+
+
+			function processPassengers(passengers, testFunction) {
+				for (var i = 0; i < passengers.length; i++) {
+					if (testFunction(passengers[i])) {
+						return false;
+					}
+				}
+				return true;
+			};
+
+			function printPassenger(passenger) {
+				var message;
+				if (passenger.paid) {
+					message = passenger.name + " has paid. :)";
+				} else {
+					message = passenger.name + " has not paid. :(";
+				}
+				console.log(message);
+				return false;
+			}
+
+			processPassengers(passengers, printPassenger);
+
+			</script>
+	</body>
+</html>
