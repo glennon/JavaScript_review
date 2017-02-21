@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Translator</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+			<script>
+				function sayIt(translator) {
+					var phrase = translator("Hello");
+					alert(phrase);
+				};
+				function hawaiianTranslator(word) {
+					if (word === "Hello") return "Aloha (Hello)";
+					if (word === "Goodbye") return "Aloha (Goodbye)";
+				}
+
+				sayIt(hawaiianTranslator);
+
+			</script>
+	</body>
+</html>
