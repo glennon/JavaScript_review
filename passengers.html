@@ -52,6 +52,28 @@
 				return orderFunction;
 			};
 
+
+			function createDinnerOrder(passenger) {
+				var orderFunction;
+
+				if (passenger.ticket === "firstclass") {
+					orderFunction = function() {
+						alert(passenger.name + ", (of first class), would you like chicken or pasta?");
+					};
+				} else if (passenger.ticket === "premium") {
+					orderFunction = function() {
+						alert(passenger.name + ", (of premium econo class), would you like a snack box or cheese plate?");
+					};
+				} else {
+						orderFunction = function() {
+							alert(passenger.name + ", (of coach class), would you like peanuts or pretzels?");
+						};
+				}
+				return orderFunction;
+			};
+
+
+
 			function servePassengers(passengers) {
 				for (var i = 0; i < passengers.length; i++){
 					serveCustomer(passengers[i]);
@@ -60,7 +82,9 @@
 
 			function serveCustomer(passenger) {
 				var getDrinkOrderFunction = createDrinkOrder(passenger);
+				var getDinnerOrderFunction = createDinnerOrder(passenger);
 				getDrinkOrderFunction();
+				getDinnerOrderFunction();
 				getDrinkOrderFunction();
 			};
 
