@@ -33,7 +33,36 @@
 				return false;
 			}
 
-			processPassengers(passengers, printPassenger);
+			function createDrinkOrder(passenger) {
+				var orderFunction;
+
+				if (passenger.ticket === "firstclass") {
+					orderFunction = function() {
+						alert(passenger.name + ", would you like a cocktail or wine?");
+					};
+				} else {
+					orderFunction = function() {
+						alert(passenger.name + ", your choice is cola or water.");
+					};
+				}
+				return orderFunction;
+			};
+
+			function serverPassengers(passengers) {
+				for (var i = 0; i < passengers.length; i++){
+					serverCustomer(passengers[i]);
+				}
+			};
+
+			function serverCustomer(passenger) {
+				var getDrinkOrderFunction = createDrinkOrder(passenger);
+				getDrinkOrderFunction();
+				getDrinkOrderFunction();
+			};
+
+			serverPassengers(passengers);
+
+			// processPassengers(passengers, printPassenger);
 
 			</script>
 	</body>
