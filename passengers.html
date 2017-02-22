@@ -52,19 +52,19 @@
 				return orderFunction;
 			};
 
-			function serverPassengers(passengers) {
+			function servePassengers(passengers) {
 				for (var i = 0; i < passengers.length; i++){
-					serverCustomer(passengers[i]);
+					serveCustomer(passengers[i]);
 				}
 			};
 
-			function serverCustomer(passenger) {
+			function serveCustomer(passenger) {
 				var getDrinkOrderFunction = createDrinkOrder(passenger);
 				getDrinkOrderFunction();
 				getDrinkOrderFunction();
 			};
 
-			serverPassengers(passengers);
+			servePassengers(passengers);
 
 			// processPassengers(passengers, printPassenger);
 
