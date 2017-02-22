@@ -40,10 +40,14 @@
 					orderFunction = function() {
 						alert(passenger.name + ", would you like a cocktail or wine?");
 					};
-				} else {
+				} else if (passenger.ticket === "coach") {
 					orderFunction = function() {
 						alert(passenger.name + ", your choice is cola or water.");
 					};
+				} else {
+					orderFunction = function() {
+						alert(passenger.name + ", your choice is wine, cola, or water.");
+					}
 				}
 				return orderFunction;
 			};
