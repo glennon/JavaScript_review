@@ -21,7 +21,9 @@ function makeTimer(doneMessage, n) {
   setTimeout(function() {
     alert(doneMessage);
   }, n);
+  doneMessage = "Ouch!";
 };
+
 
 makeTimer("Cookies are done!", 3000);
 
