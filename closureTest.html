@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Closure Test</title>
+</head>
+<body>
+<script>
+
+  // // get an error because doneMessage is not defined
+  // function handler() {
+  //   alert(doneMessage);
+  // }
+  // function makeTimer(doneMessage, n) {
+  //   setTimeout(handler, n);
+  // }
+
+
+  // Correct way
+function makeTimer(doneMessage, n) {
+  setTimeout(function() {
+    alert(doneMessage);
+  }, n);
+};
+
+makeTimer("Cookies are done!", 3000);
+
+
+</script>
+</body>
+</html>
