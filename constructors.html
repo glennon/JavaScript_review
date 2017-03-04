@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Object Constructors</title>
   <script>
-    function Car(make,model,year,color,passengers,convertible,mileage,started) {
+    function Car(make,model,year,color,passengers,convertible,mileage) {
       this.make = make;
       this.model = model;
       this.year = year;
@@ -12,7 +12,7 @@
       this.passengers = passengers;
       this.convertible = convertible;
       this.mileage = mileage;
-      this.started = started;
+      this.started = false;
       this.start = function() {
         this.started = true;
       };
@@ -28,7 +28,20 @@
       };
     };
 
-    var myCar = new Car();
+    var chevy = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021);
+    var cadi = new Car("GM", "Cadillac", 1955, "tan", 5, false, 12892);
+    var taxi = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 281341);
+    var fiat = new Car("Fiat", "500", 1957, "Medium Blue", 2, false, 88000);
+
+    var cars = [chevy, cadi, taxi, fiat];
+
+    for (var i=0; i<cars.length; i++) {
+      cars[i].start();
+      cars[i].drive();
+      cars[i].drive();
+      cars[i].stop();
+    };
+
 
   </script>
 </head>
