@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Object Constructors</title>
+  <script>
+    function Car(make,model,year,color,passengers,convertible,mileage,started) {
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      this.color = color;
+      this.passengers = passengers;
+      this.convertible = convertible;
+      this.mileage = mileage;
+      this.started = started;
+      this.start = function() {
+        this.started = true;
+      };
+      this.stop = function(){
+        this.started = false;
+      };
+      this.drive = function(){
+        if(this.started) {
+          console.log(this.make + " " + this.model + " goes zoom zoom!");
+        } else {
+          console.log("Start the engine first.");
+        }
+      };
+    };
+
+    var myCar = new Car();
+
+  </script>
+</head>
+<body></body>
+</html>
