@@ -45,6 +45,7 @@
   };
 
   ShowDog.prototype = new Dog();
+  ShowDog.prototype.constructor = ShowDog;
   ShowDog.prototype.league = "Webville";
   ShowDog.prototype.stack = function() {
     console.log("Stack");
