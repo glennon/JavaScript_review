@@ -5,21 +5,10 @@
 <meta charset="utf-8">
 <script>
 
-// String.prototype.palindrome = function() {
-// 	var len = this.length-1;
-// 	for (var i = 0; i <= len/2; i++) {
-// 		if (this.charAt(i) !== this.charAt(len-i)) {
-// 			return false;
-// 		}
-// 	}
-// 	return true;
-// };
-
 String.prototype.palindrome = function() {
   var wordLength = this.length - 1;
   for (var i = 0; i < wordLength; i++) {
-    //console.log("compare address: " + i + " (" + this.charAt(i) + ") with address: " + (wordLength - i) + " (" + this.charAt(wordLength - i) + ")");
-    if (this.charAt(i) !== this.charAt(wordLength - i)) {
+      if (this.charAt(i) !== this.charAt(wordLength - i)) {
       return false;
     };
   };
@@ -45,7 +34,6 @@ for (var i = 0; i < phrases.length; i++) {
 		console.log("'" + phrase + "' is NOT a palindrome");
 	}
 }
-
 
 </script>
 </head>
